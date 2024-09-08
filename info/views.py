@@ -92,7 +92,7 @@ def tracker(request):
                 person.save() 
                 query = request.POST["food"] 
                 api_url = 'https://api.api-ninjas.com/v1/nutrition?query={}'.format(query)
-                response = requests.get(api_url, headers={'X-Api-Key': 'YLII69vZbah810JF3uIp3Q==R8tfmenHPgC1ZQQi'})
+                response = requests.get(api_url, headers={'X-Api-Key': '{api_key}'})
                 if response.status_code == requests.codes.ok:
                     api = json.loads(response.content)
                     print(api)     
