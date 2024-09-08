@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Calorie Tracker</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel = "icon" href = "{% static 'nutrition.png' %}">
+        <link rel='stylesheet' type='text/css' media='screen' href="{% static 'style.css' %}?{% now 'U' %}">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+    </head>
+    <body class = "calorie-body">
+        <h1 class = "calorie-header">Nutrition Tracker</h1>
+        <form action = "" method = "post"> {% csrf_token %} 
+            <div class = "calorie-info">
+                <input type = "text" placeholder = "Enter what you ate" name = "food">
+                <select name = "day"> 
+                    <option value = "monday">Monday</option>
+                    <option value = "tuesday">Tuesday</option>
+                    <option value = "wednesday">Wednesday</option>
+                    <option value = "thursday">Thursday</option>
+                    <option value = "friday">Friday</option>
+                </select>
+                <input type = "submit" name = "food-submit" value = "Enter">
+            </div> 
+        </form>
+        <br/> 
+        <form action = "" method = "post"> {% csrf_token %} 
+            <input class = "clear" type = "submit" name = "clear-submit" value = "Clear"> 
+        </form>
+        <br/> 
+        <div class = "days-of-week">
+            <div class = "days">
+                <h2>Monday</h2>
+                {% if monday %}
+                    {% for fruit in monday %}  
+                        <h1>{{fruit}}</h1>
+                    {% endfor %} 
+                {% endif %}
+            </div>
+            <div class = "days">
+                <h2>Tuesday</h2>
+                {% if tuesday %}
+                    {% for fruit in tuesday %}  
+                        <h1>{{fruit}}</h1>
+                    {% endfor %} 
+                {% endif %}
+            </div>
+            <div class = "days">
+                <h2>Wednesday</h2>
+                {% if wednesday %}
+                    {% for fruit in wednesday%}  
+                        <h1>{{fruit}}</h1>
+                    {% endfor %} 
+                {% endif %}
+            </div>
+            <div class = "days">
+                <h2>Thursday</h2>
+                {% if thursday %}
+                    {% for fruit in thursday %}  
+                        <h1>{{fruit}}</h1>
+                    {% endfor %} 
+                {% endif %}
+            </div>
+            <div class = "days">
+                <h2>Friday</h2> 
+                {% if friday %}
+                    {% for fruit in friday %}  
+                        <h1>{{fruit}}</h1>
+                    {% endfor %} 
+                {% endif %} 
+            </div>
+        </div>
+        <div class = "nutrition-facts">
+            <p style = "font-weight: bold;">
+                For the whole week: 
+            </p>
+            <p>
+                <span style = "color:rgb(232, 19, 161); font-weight: bold;">Fat: </span>
+                <span id = "fat">{{fat}}</span> g 
+            </p>
+            <p>
+                <span style = "color:rgb(232, 19, 161); font-weight: bold;">Sodium: </span>
+                <span id = "sodium">{{sodium}}</span> mg 
+            </p>
+            <p>
+                <span style = "color:rgb(232, 19, 161); font-weight: bold;">Potassium: </span>
+                <span id = "potassium">{{potassium}}</span> g 
+            </p>
+            <p>
+                <span style = "color:rgb(232, 19, 161); font-weight: bold;">Cholesterol: </span>
+                <span id = "cholesterol">{{cholesterol}}</span> mg 
+            </p>
+            <p>
+                <span style = "color:rgb(232, 19, 161); font-weight: bold;">Carbohydrates: </span>
+                <span id = "carbohydrates">{{carbohydrates}}</span> g 
+            </p>
+            <p>
+                <span style = "color:rgb(232, 19, 161); font-weight: bold;">Fiber: </span>
+                <span id = "fiber">{{fiber}}</span> g 
+            </p>
+            <p>
+                <span style = "color:rgb(232, 19, 161); font-weight: bold;">Sugar: </span>
+                <span id = "sugar">{{sugar}}</span> g 
+            </p>
+        </div>
+        <div class = "chart">
+            <canvas id="myChart"></canvas>
+        </div>
+        <script>
+            const ctx = document.getElementById('myChart');
+            new Chart(ctx, {
+              type: 'pie',
+              data: {
+                labels: ['Fat', 'Sodium', 'Potassium', 'Cholesterol', 'Carbohydrates', 'Fiber', 'Sugar'], 
+                datasets: [{
+                  label: '# of Votes',
+                  data: [document.getElementById("fat").textContent, 
+                         document.getElementById("sodium").textContent, 
+                         document.getElementById("potassium").textContent, 
+                         document.getElementById("cholesterol").textContent, 
+                         document.getElementById("carbohydrates").textContent,
+                         document.getElementById("fiber").textContent,
+                         document.getElementById("sugar").textContent,
+                  ], 
+                  backgroundColor: [
+                    "#ef3d34", // red 
+                    "#ee7f28", // orange 
+                    "#f1d14c", // yellow
+                    "#14e1a9", // green 
+                    "#14b2e1", // blue
+                    "#a73deb", // purple 
+                    "#ee4aee", // pink
+                  ],
+                  borderWidth: 1
+                }]
+              }, 
+              options: {
+                scales: {
+                  y: {
+                    beginAtZero: true
+                  }
+                }
+              }
+            });
+        </script>
+    </body>
+</html>

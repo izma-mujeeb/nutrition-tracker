@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Sign Up</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel = "icon" href = "{% static 'login.png' %}"> 
+        <link rel='stylesheet' type='text/css' media='screen' href="{% static 'style.css' %}?{% now 'U' %}">
+    </head>
+    <body class = "signup-body">
+        <h1 class = "sign-up-heading">Sign up</h1>
+        <form action = "" method = "post"> {% csrf_token %}
+            <div class = "signup-form">
+                {% if message %} 
+                    <h1 class = "alert">{{message}}</h1>
+                {% endif %} 
+                {{form}}   
+                <p>Already have an account? <a href = "../login">Login</a></p>
+                <input class = "submit" type = "submit" value = "Sign Up">
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Login</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel = "icon" href = "{% static 'login.png' %}"> 
+        <link rel='stylesheet' type='text/css' media='screen' href="{% static 'style.css' %}?{% now 'U' %}">   
+    </head>
+    <body class = "login-body">
+        <h1 class = "login-heading">Login</h1>
+        <form action = "" method = "post"> {% csrf_token %} 
+            <div class = "login-form">
+                {% if message %}
+                    <h1 class = "alert">{{message}}</h1>
+                {% endif %}
+                {{form}}   
+                <p>Don't have an account? <a href = "../signup">Sign Up</a></p>
+                <input class = "submit" type = "submit" value = "Login">
+            </div>
+        </form>
+    </body>
+</html>

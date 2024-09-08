@@ -1,0 +1,198 @@
+.body {
+    background-image: url("background.png"); 
+    background-size: cover;
+    margin: 0;
+}
+.signup-body, .login-body {
+    background-color: rgb(201, 136, 201);
+}
+.calorie-body {
+    background-color: pink;
+}
+.title, .subheading {
+    text-align: center;
+    font-size: 3rem;
+    font-family: verdana;
+    color: white;
+}
+header {
+    background-color: purple;
+    margin: 0;
+    padding: 10px;
+}
+.subheading {
+    font-size: 1rem;
+    color: rgb(241, 177, 241);
+}
+.links {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 280px;
+}
+.login, .signup {
+    font-family: verdana;
+    font-size: 2rem;
+    text-decoration: none;
+    background-color: purple;
+    color: white;
+    padding: 10px 50px;
+    border-radius: 5px;
+}
+.login:hover, .signup:hover {
+    background-color: white;
+    color: purple;
+}
+.sign-up-heading, .login-heading, .calorie-header {
+    text-align: center;
+    font-family: verdana;
+    font-size: 3rem;
+    color: purple;
+    text-shadow: 2px 2px white;
+}
+.calorie-header {
+    color: rgb(232, 19, 161);
+    text-shadow: 2px 2px black;
+}
+.form-control {
+    background-color: purple;
+    border: none;
+    border-bottom: 1px black solid;
+    margin: 15px;
+}
+label {
+    font-size: 1.3rem;
+    font-family: verdana;
+    color: white;
+}
+.signup-form, .login-form { /* div around the label and input*/
+    background-color: purple;
+    box-shadow: 2px 2px white;
+    border-radius: 5px;
+    height: 200px;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding: 100px 0px;
+}
+.signup-form p, .signup-form a, .login-form p, .login-form a{
+    color: white;
+    font-family: verdana;
+    font-size: 15px;
+}
+.submit {
+    width: 50%;
+    height: 35px;
+    background-color: white;
+    color: purple;
+    border: none;
+    font-size: 1rem;
+    font-family: verdana;
+}
+.submit:hover {
+    background-color: rgb(201, 136, 201);
+    color: white;
+    cursor: pointer;
+}
+.calorie-info {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.calorie-info input[type=text], .calorie-info-text {
+    font-family: verdana;
+    background-color: rgb(238, 144, 160);
+    border-radius: 5px;
+    border: 2px black solid;
+    padding: 7px;
+    width: 35%;
+    height: 30px;
+}
+::placeholder {
+    color: white;
+}
+.calorie-info select, .calorie-info-select {
+    font-family: verdana;
+    background-color: rgb(238, 144, 160);
+    width: 10%;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px black solid;
+}
+.calorie-info input[type=submit] {
+    font-family: verdana;
+    background-color: rgb(238, 144, 160);
+    width: 18%;
+    border-radius: 5px;
+    height: 35px;
+    border: none;
+}
+.calorie-info input[type=submit]:hover {
+    background-color: white;
+    cursor: pointer;
+}
+.days {
+    background-color: rgb(238, 144, 160);
+    width: 20%;
+    height: 470px;
+    border-radius: 5px;
+}
+.days h2, .days p {
+    font-family: verdana;
+    color: rgb(232, 19, 161); 
+    text-shadow: 1px 1px black;
+}
+.days p {
+    color: black;
+    text-shadow: none;
+}
+.days-of-week {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+.alert {
+    font-family: verdana;
+    color: black;
+    font-size: 1rem;
+}
+.days h1 {
+    font-family: verdana;
+    font-size: 0.9rem;
+    color: purple;
+    background-color: pink;
+    padding: 5px;
+    border-radius: 10px;
+}
+.nutrition-facts {
+    display: flex;
+    font-family: verdana;
+    gap: 10px;
+    justify-content: center;
+    text-align: center; 
+    color: black;
+    font-size: 1.3rem; 
+}
+.chart {
+    position: relative;
+    height: 800px;
+    width: 800px;
+    margin: auto;
+}
+.clear {
+    display: block;
+    margin: auto;
+    background-color: rgb(238, 144, 160); 
+    font-family: verdana;
+    height: 30px;
+    width: 20%; 
+    border-radius: 10px; 
+    color: white;
+}
+.clear:hover {
+    cursor: pointer;
+    background-color: pink; 
+}

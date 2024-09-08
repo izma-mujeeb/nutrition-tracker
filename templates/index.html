@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Nutrition Tracker</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href="{% static 'style.css' %}?{% now 'U' %}">
+        <link rel = "icon" href = "{% static 'icon.png' %}"> 
+    </head>
+    <body class = "body"> 
+        <header>
+            <h1 class = "title">Nutrition Tracker</h1>
+            <h2 class = "subheading">Making tracking your nutritions easier for you!</h2>
+        </header>
+        <div class = "links">
+            <a class = "login" href = "login">Login</a>
+            <a class = "signup" href = "signup">Sign Up</a>
+        </div>
+    </body>
+</html>
